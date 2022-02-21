@@ -13,6 +13,10 @@ sudo blkid /dev/sda2
 
 sudo update-grub
 
+ls
+linux /boot/vm~~ root=/dev/sda5
+initrd /boot/init~~
+
 set prefix=(hd0,1)/grub
 set root=(hd0,1)
 insmod linux
