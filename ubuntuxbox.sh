@@ -2,8 +2,9 @@ sudo echo -e "\n#this are the new lines\ndeb cdrom:[Ubuntu 21.10 _Impish Indri_ 
 
 sudo apt-add-repository -y ppa:rael-gc/ubuntu-xboxdrv
 sudo apt-get update
-#sudo apt-get install ubuntu-xboxdrv
-
+sudo apt-get install ubuntu-xboxdrv
+sudo systemctl enable xboxdrv.service
+sudo systemctl start xboxdrv.service
 
 wget http://ppa.launchpad.net/mdeslaur/steamos/ubuntu/pool/main/s/steamos-xpad-dkms/steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
 sudo dpkg -i steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
@@ -17,7 +18,8 @@ sudo lsusb
 echo try sudo lsusb
 echo on no connect
 echo try: sudo modprobe xpad
-
+sudo systemctl restart xboxdrv.service
+sudo modprobe xpad
 
 #sudo apt-get install xboxdrv
 #sudo systemctl enable xboxdrv.service
