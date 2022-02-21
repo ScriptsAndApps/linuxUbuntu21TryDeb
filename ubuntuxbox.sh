@@ -2,17 +2,29 @@ sudo echo -e "\n#this are the new lines\ndeb cdrom:[Ubuntu 21.10 _Impish Indri_ 
 
 sudo apt-add-repository -y ppa:rael-gc/ubuntu-xboxdrv
 sudo apt-get update
-sudo apt-get install ubuntu-xboxdrv
-wget http://ppa.launchpad.net/mdeslaur/steamos/ubuntu/pool/main/s/steamos-xpad-dkms/steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
+#sudo apt-get install ubuntu-xboxdrv
 
+
+wget http://ppa.launchpad.net/mdeslaur/steamos/ubuntu/pool/main/s/steamos-xpad-dkms/steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
 sudo dpkg -i steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
 sudo apt-get install -f
 
-#sudo apt-get install xboxdrv
-sudo systemctl enable xboxdrv.service
-sudo systemctl start xboxdrv.service
-sudo echo -e "\n[xboxdrv]\nsilent = true\nnext-controller = true\nnext-controller = true\nnext-controller = true" >> /etc/default/xboxdrv 
-sudo systemctl restart xboxdrv.service
+sudo apt install git
+git clone https://github.com/paroj/xpad.git /usr/src/xpad-0.4
+dkms install -m xpad -v 0.4
+sudo modprobe xpad
+sudo lsusb
+echo try sudo lsusb
+echo on no connect
+echo try: sudo modprobe xpad
 
+
+#sudo apt-get install xboxdrv
+#sudo systemctl enable xboxdrv.service
+#sudo systemctl start xboxdrv.service
+#sudo echo -e "\n[xboxdrv]\nsilent = true\nnext-controller = true\nnext-controller = true\nnext-controller = true" >> /etc/default/xboxdrv 
+#sudo systemctl restart xboxdrv.service
+
+#sudo xboxdrv --silent --mimic-xpad
 
 
