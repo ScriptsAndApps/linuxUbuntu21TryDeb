@@ -34,3 +34,6 @@ echo https://www.x360ce.com/
 sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install wine32
 sudo apt install wine32
 sudo apt install mono-complete
+sudo apt install winetricks
+sudo winetricks dotnet45
+
