@@ -1,0 +1,21 @@
+menuentry ‘Windows′ {  
+    set root=’(hd0,msdos2)’  
+    chainloader +1  
+}
+
+menuentry "Windows 10" --class windows --class os {
+   insmod ntfs
+   search --no-floppy --set=root --fs-uuid $your_uuid_here$
+   ntldr /bootmgr
+}
+
+sudo blkid /dev/sda2
+
+sudo update-grub
+
+set prefix=(hd0,1)/grub
+set root=(hd0,1)
+insmod linux
+insmod normal
+normal
+
