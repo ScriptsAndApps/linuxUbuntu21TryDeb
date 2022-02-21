@@ -4,10 +4,11 @@ sudo apt-add-repository -y ppa:rael-gc/ubuntu-xboxdrv
 sudo apt-get update
 sudo apt-get install ubuntu-xboxdrv
 
-sudo apt-get install xboxdrv
+#sudo apt-get install xboxdrv
 sudo systemctl enable xboxdrv.service
 sudo systemctl start xboxdrv.service
-sudo echo -e "[xboxdrv]\nsilent = true\nnext-controller = true\nnext-controller = true\nnext-controller = true" > /etc/default/xboxdrv/ 
-
-echo /etc/default/xboxdrv/
+sudo echo -e "\n[xboxdrv]\nsilent = true\nnext-controller = true\nnext-controller = true\nnext-controller = true" >> /etc/default/xboxdrv 
 sudo systemctl restart xboxdrv.service
+
+
+
