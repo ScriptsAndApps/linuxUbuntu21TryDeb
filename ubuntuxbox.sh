@@ -31,4 +31,6 @@ sudo modprobe xpad
 sudo apt install wine
 
 echo https://www.x360ce.com/
+sudo dpkg --add-architecture i386 && apt-get update &&
+apt-get install wine32
 
