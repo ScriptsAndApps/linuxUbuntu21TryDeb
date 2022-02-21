@@ -28,5 +28,7 @@ sudo modprobe xpad
 #sudo systemctl restart xboxdrv.service
 
 #sudo xboxdrv --silent --mimic-xpad
+sudo apt install wine
 
+echo https://www.x360ce.com/
 
