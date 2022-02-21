@@ -1,3 +1,9 @@
+fdisk -l
+
+
+/etc/grub.d/40_custom 
+
+
 menuentry ‘Windows′ {  
     set root=’(hd0,msdos2)’  
     chainloader +1  
