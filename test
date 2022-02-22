@@ -22,7 +22,9 @@ net.conf.wlan0.forwarding=1
 net.conf.enp4s0.forwarding=1
 net.conf.wlp3s0.forwarding=1
 
-sudo 
+sudo reboot -f
+
+#after bootdo  reboot on target pc
 
 
 fdisk -l
