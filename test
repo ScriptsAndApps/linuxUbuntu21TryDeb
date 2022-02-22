@@ -1,3 +1,9 @@
+iptables -A FORWARD -o enp4s0 -i wlp3s0 -p ALL -j ACCEPT
+iptables -A FORWARD -i enp4s0 -o wlp3s0 -p ALL -j ACCEPT
+
+
+
+
 fdisk -l
 
 
