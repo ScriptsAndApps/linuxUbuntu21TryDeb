@@ -9,18 +9,18 @@ sudo rm temp.list
 sudo cat /etc/apt/sources.list
 sudo apt-add-repository -y ppa:rael-gc/ubuntu-xboxdrv
 sudo apt-get update
-sudo apt-get install ubuntu-xboxdrv
+#sudo apt-get install ubuntu-xboxdrv
 sudo systemctl enable xboxdrv.service
 sudo systemctl start xboxdrv.service
 sudo modprobe xpad
 
-wget http://ppa.launchpad.net/mdeslaur/steamos/ubuntu/pool/main/s/steamos-xpad-dkms/steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
+#wget http://ppa.launchpad.net/mdeslaur/steamos/ubuntu/pool/main/s/steamos-xpad-dkms/steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
 sudo dpkg -i steamos-xpad-dkms_0.5-0md0.16.04.1_all.deb
 sudo apt-get install -f
 
 sudo apt install git
-git clone https://github.com/paroj/xpad.git /usr/src/xpad-0.4
-dkms install -m xpad -v 0.4
+#git clone https://github.com/paroj/xpad.git /usr/src/xpad-0.4
+#dkms install -m xpad -v 0.4
 sudo modprobe xpad
 
 #sudo apt-get install xboxdrv
@@ -30,7 +30,7 @@ sudo modprobe xpad
 #sudo systemctl restart xboxdrv.service
 
 #sudo xboxdrv --silent --mimic-xpad
-sudo apt install wine
+#sudo apt install wine
 
 echo https://www.x360ce.com/
 sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install wine32
